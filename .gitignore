@@ -1,0 +1,46 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+venv/
+.venv/
+
+# ── Node / FE ──
+fe/node_modules/
+fe/dist/
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Environment ──
+.env
+.env.*
+!.env.example
+fe/.env
+fe/.env.*
+!fe/.env.example
+
+# ── Temp / Runtime ──
+be/temp/
+be/dictionary.db
+*.db
+
+# ── Docker ──
+docker-compose.override.yml
+
+# ── Logs ──
+*.log
+results.txt

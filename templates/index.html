@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventLog Filter Test Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="file"], textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #218838; }
+        .output { background: #e9ecef; padding: 10px; border-radius: 4px; min-height: 50px; white-space: pre-wrap; word-wrap: break-word; font-family: monospace; }
+        .row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;}
+        .col { flex: 1; min-width: 300px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EventLog Filter API Tester</h1>
+        
+        <div class="row">
+            <div class="col">
+                <h2>1. Lấy Session ID</h2>
+                <button onclick="getSession()">Get Session</button>
+                <div class="form-group" style="margin-top: 10px">
+                    <label>Session ID Hiện Tại:</label>
+                    <input type="text" id="session_id" readonly />
+                </div>
+            </div>
+
+            <div class="col">
+                <h2>2. Upload File .evtx</h2>
+                <div class="form-group">
+                    <input type="file" id="evtx_files" accept=".evtx" multiple />
+                </div>
+                <button onclick="uploadFiles()">Upload</button>
+                <div class="form-group" style="margin-top: 10px">
+                    <label>Dictionary / Kết quả Upload:</label>
+                    <div id="upload_output" class="output"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="flex: 2;">
+                <h2>3. Lọc Events</h2>
+                <div class="form-group">
+                    <label>Filters JSON (Theo chuẩn của EventLogQueryHandler):</label>
+                    <textarea id="filter_json" rows="4">{"event_id": [4624]}</textarea>
+                </div>
+                <button onclick="filterEvents()">Filter</button>
+                <div class="form-group" style="margin-top: 10px">
+                    <label>Kết quả lọc:</label>
+                    <div id="filter_output" class="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function getSession() {
+            try {
+                const res = await fetch('/get_session');
+                const data = await res.json();
+                document.getElementById('session_id').value = data.session_id;
+            } catch (err) {
+                alert('Lỗi khi lấy session: ' + err);
+            }
+        }
+
+        async function uploadFiles() {
+            const sid = document.getElementById('session_id').value;
+            const fileInput = document.getElementById('evtx_files');
+            const out = document.getElementById('upload_output');
+            
+            if(!sid) return alert('Vui lòng lấy Session ID trước');
+            if(fileInput.files.length === 0) return alert('Vui lòng chọn file .evtx');
+            
+            const formData = new FormData();
+            formData.append('session_id', sid);
+            for(let i=0; i < fileInput.files.length; i++){
+                formData.append('files', fileInput.files[i]);
+            }
+
+            out.innerText = 'Đang tải lên và xử lý...';
+            
+            try {
+                const res = await fetch('/upload', { method: 'POST', body: formData });
+                const data = await res.json();
+                out.innerText = JSON.stringify(data, null, 2);
+            } catch (err) {
+                out.innerText = 'Lỗi upload: ' + err;
+            }
+        }
+
+        async function filterEvents() {
+            const sid = document.getElementById('session_id').value;
+            const filterInput = document.getElementById('filter_json').value;
+            const out = document.getElementById('filter_output');
+            
+            if(!sid) return alert('Vui lòng lấy Session ID trước');
+            let filters = {};
+            try {
+                filters = JSON.parse(filterInput);
+            } catch (e) {
+                return alert('Filters JSON không hợp lệ');
+            }
+
+            out.innerText = 'Đang truy vấn...';
+            
+            try {
+                const res = await fetch('/filter', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: sid, filters: filters })
+                });
+                const data = await res.json();
+                out.innerText = JSON.stringify(data, null, 2);
+            } catch (err) {
+                out.innerText = 'Lỗi truy vấn: ' + err;
+            }
+        }
+    </script>
+</body>
+</html>

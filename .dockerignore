@@ -1,0 +1,29 @@
+# ── BE .dockerignore (root context) ──
+.git
+.gitignore
+.vscode
+.idea
+__pycache__
+*.pyc
+venv/
+.venv/
+.env
+.env.*
+!.env.example
+
+# FE not needed in BE image
+fe/
+
+# Temp data
+be/temp/
+be/dictionary.db
+*.db
+
+# Docker files
+docker-compose.yml
+docker-compose.override.yml
+Dockerfile.be
+README.md
+*.md
+*.log
+results.txt

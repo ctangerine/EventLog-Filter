@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # --- BACKEND (Python/Flask) ---
+  be:
+    build:
+      context: .
+      dockerfile: Dockerfile.be
+    container_name: eventlog_be
+    ports:
+      - "5000:5000"
+    volumes:
+      - be_temp:/app/be/temp
+    environment:
+      - FLASK_DEBUG=0
+      - FLASK_PORT=5000
+    restart: unless-stopped
+
+  # --- FRONTEND (React + Vite) ---
+  fe:
+    build:
+      context: ./fe
+      dockerfile: Dockerfile
+    container_name: eventlog_fe
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./fe:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
+      - VITE_API_URL=http://localhost:5000
+    command: npm run dev
+    depends_on:
+      - be
+
+volumes:
+  be_temp:

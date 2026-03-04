@@ -1,0 +1,720 @@
+Event ID	Description
+ 	512	Windows NT is starting up. (Legacy) Logged when the operating system begins to start, marking the initialization of auditing. 
+ 	513	Windows NT is shutting down. (Legacy) Occurs when the operating system is shutting down, marking the end of the auditing session. 
+ 	514	An authentication package was loaded by the Local Security Authority. Logged when LSA loads an authentication DLL or package for logon processing. 
+ 	515	Trusted logon process has been registered with the Local Security Authority. Logged when a new, trusted logon process (like Kerberos) is registered with LSA. 
+ 	516	Extranet lockout.
+This event is generated when a user account is locked out due to too many bad password submissions to AD FS. It is logged on domain controllers and member computers. 
+ 	517	The audit log was cleared. Logged when the event log is cleared, typically by an administrator. 
+ 	518	An account was successfully mapped to a domain account. Logged when a local account is mapped to a domain account for access. 
+ 	519	A process is using a user’s credentials for network access. Occurs when one process uses another user’s credentials to access network resources. 
+ 	520	The event message file for event log could not be loaded. Logged when Windows cannot load the message file for an event log, resulting in unreadable messages. 
+ 	521	Unable to log events in the security log.
+This event is generated when Windows is unable to write events to the security event log. It is logged on domain controllers and member computers. 
+ 	528	Successful logon. (Legacy, pre-Windows Server 2008) Logged when a user successfully logs on to a computer. 
+ 	529	Logon failure: unknown user name or bad password. (Legacy, pre-Windows Server 2008) Occurs when a logon attempt fails because of an invalid username or password. 
+ 	530	Logon failure: account logon time restriction violation. (Legacy, pre-Windows Server 2008) Logged when a user tries to log on outside permitted logon hours. 
+ 	531	Logon failure: account currently disabled. (Legacy, pre-Windows Server 2008) Occurs when a user tries to log on using a disabled account. 
+ 	532	Logon failure: account expired. (Legacy, pre-Windows Server 2008) Logged when a user tries to log on using an expired account. 
+ 	533	Logon failure: account not allowed to log on at this computer. (Legacy, pre-Windows Server 2008) Occurs if the user is not allowed to log on at that specific computer. 
+ 	534	Logon failure: the user has not been granted the requested logon type at this machine. (Legacy, pre-Windows Server 2008) Indicates the user account does not have permission to log on in the specified way. 
+ 	535	Logon failure: the specified account's password has expired. (Legacy, pre-Windows Server 2008) Logged when a user tries to log on with an expired password. 
+ 	536	Logon failure: NetLogon service is not active. (Legacy, pre-Windows Server 2008) Occurs when the NetLogon service needed for certain logon types is not available. 
+ 	537	Logon failure: unknown reason or internal error. (Legacy, pre-Windows Server 2008) Logged for various reasons when logon fails and no specific error applies. 
+ 	538	User logoff. (Legacy, pre-Windows Server 2008) Logged when a user logs off from the system. 
+ 	539	Logon failure: account locked out. (Legacy, pre-Windows Server 2008) Occurs when a user tries to log on to an account that is currently locked out. 
+ 	540	Successful Network Logon. (Legacy, pre-Windows Server 2008) Logged when a network logon (via SMB, etc.) succeeds. 
+ 	551	User initiated logoff. (Legacy, pre-Windows Server 2008) Logged when a user logs off interactively. 
+ 	552	Logon attempt using explicit credentials. (Legacy, pre-Windows Server 2008) Occurs when a user account is logged onto using explicit credentials (e.g., RunAs). 
+ 	560	A handle to an object was requested.
+This event is generated every time specific access is requested for an object, such as a file system, kernel, registry object, or a file system object on a removable storage device. It is logged on domain controllers, member servers, and workstations. 
+ 	561	Handle closed. (Legacy, pre-Windows Server 2008) Occurs when a previously opened handle to an audited object is closed. 
+ 	562	Handle to object deleted. (Legacy, pre-Windows Server 2008) Logged when a handle to an object is deleted or destroyed. 
+ 	563	An object was opened for deletion.
+This event is generated every time an object is accessed successfully with the intention of deleting it. It is logged on domain controllers, member servers, and workstations. 
+ 	564	An object was deleted.
+This event is generated every time an Active Directory object is successfully deleted. It is logged on domain controllers, member servers, and workstations. 
+ 	565	Object open audited with access mask. (Legacy, pre-Windows Server 2008) Occurs when an object is opened and the access rights (mask) used are recorded for auditing. 
+ 	566	Object operation attempted. (Legacy, pre-Windows Server 2008) Logged when a specific operation is performed on an object (e.g., change, read, delete), including successful or failed attempts. 
+ 	567	An attempt was made to access an object.
+This event is generated every time a user or program attempts to open an Active Directory object. It is logged on domain controllers, member servers, and workstations. 
+ 	576	Special privileges assigned to new logon. (Legacy, pre-Windows Server 2008) Logged when a new logon session is started with admin/system privileges. 
+ 	577	Privileged service called. (Legacy, pre-Windows Server 2008) Logged when a privileged system service (like backup, restore) is called. 
+ 	578	Privileged object operation attempt. (Legacy, pre-Windows Server 2008) Occurs when a privileged object is accessed or an operation is tried that requires enhanced permissions. 
+ 	592	A new process has been created. (Legacy, pre-Windows Server 2008) Logged when a new process or program runs on the system. 
+ 	593	A process exited. (Legacy, pre-Windows Server 2008) Occurs when a process running on the system terminates. 
+ 	594	Handle to an object requested. (Legacy, pre-Windows Server 2008) Logged when access to an object (e.g., file, key) is requested and a handle is obtained. 
+ 	595	Handle to an object closed. (Legacy, pre-Windows Server 2008) Occurs when a previous handle to an object is closed. 
+ 	596	Auditable operation performed on an object. (Legacy, pre-Windows Server 2008) Logged when a successful or attempted operation—such as read, modify, or delete—is performed on an object. 
+ 	600	Account logon granted. (Legacy, pre-Windows Server 2008) Logged when a user account is successfully authenticated to the system. 
+ 	601	Account logon denied. (Legacy, pre-Windows Server 2008) Occurs when an authentication attempt for a user account fails. 
+ 	602	Account logoff. (Legacy, pre-Windows Server 2008) Logged when a user account logs off from the system. 
+ 	608	Explicit credentials were assigned to a scheduled task. Logged when a scheduled task is configured to use explicit (user-provided) credentials. 
+ 	609	A scheduled task was registered. Occurs when a new scheduled task is added to Windows Task Scheduler. 
+ 	610	A scheduled task was started. Logged when a scheduled task begins running. 
+ 	611	A scheduled task was disabled. Occurs when a scheduled task is disabled in Task Scheduler. 
+ 	612	A scheduled task was stopped. Logged when a running scheduled task is stopped. 
+ 	613	A scheduled task was deleted. Occurs when a scheduled task is removed from the system. 
+ 	614	An object was added to the COM+ Catalog. Logged when a new object is added to the Component Services (COM+) catalog. 
+ 	615	An object was removed from the COM+ Catalog. Occurs when an object is deleted from the Component Services catalog. 
+ 	616	A channel was deleted. Logged when a Windows Event Log channel is removed from the system. 
+ 	617	A process was assigned a primary token. Occurs when a process on the system is assigned a user security token. 
+ 	618	A process was assigned a process trust label. Logged when a process is tagged with a trust label (integrity, AppLocker enforcement, etc.). 
+ 	619	A process's trust label was changed. Occurs when the trust label on a process is modified (e.g., security level changed). 
+ 	620	A scheduled task was updated. (Legacy, pre-Windows Server 2008) Logged when the properties or configuration of a scheduled task are changed. 
+ 	621	A scheduled task was enabled. (Legacy, pre-Windows Server 2008) Occurs when a disabled scheduled task is enabled in Task Scheduler. 
+ 	622	A scheduled task was deleted. (Legacy, pre-Windows Server 2008) Logged when a scheduled task is removed from the system. 
+ 	623	A scheduled task was disabled. (Legacy, pre-Windows Server 2008) Occurs when a scheduled task is disabled in Task Scheduler. 
+ 	624	User account created. (Legacy, pre-Windows Server 2008) Generated when a new user account is created. 
+ 	625	User account password changed. (Legacy, pre-Windows Server 2008) Logged when the password for a user account is changed. 
+ 	626	User account enabled. (Legacy, pre-Windows Server 2008) Occurs when a previously disabled account is enabled. 
+ 	627	Password change attempt by account. (Legacy, pre-Windows Server 2008) Logged when a user tries to change their own password. 
+ 	628	User account password set. (Legacy, pre-Windows Server 2008) Occurs when an account password is set (typically by an admin resetting it). 
+ 	629	User account disabled. (Legacy, pre-Windows Server 2008) Generated when a user account is disabled. 
+ 	630	User account deleted. (Legacy, pre-Windows Server 2008) Occurs when a user account is deleted from the system. 
+ 	631	Security-enabled global group created. (Legacy, pre-Windows Server 2008) Logged when a global security group is created. 
+ 	632	Security-enabled global group member added. (Legacy, pre-Windows Server 2008) Occurs when a new member is added to a global security group. 
+ 	633	Security-enabled global group member removed. (Legacy, pre-Windows Server 2008) Logged when a member is removed from a global security group. 
+ 	634	Security-enabled global group deleted. (Legacy, pre-Windows Server 2008) Occurs when a global security group is deleted. 
+ 	635	Security-enabled local group created. (Legacy, pre-Windows Server 2008) Generated when a new local security group is created. 
+ 	636	Security-enabled local group member added. (Legacy, pre-Windows Server 2008) Occurs when a member is added to a local security group. 
+ 	637	Security-enabled local group member removed. (Legacy, pre-Windows Server 2008) Logged when a member is removed from a local security group. 
+ 	638	Security-enabled local group deleted. (Legacy, pre-Windows Server 2008) Occurs when a local security group is deleted. 
+ 	639	Security-enabled local group changed. (Legacy, pre-Windows Server 2008) Occurs when properties of a local security group are modified. 
+ 	641	Security enabled global group changed. (Legacy, pre-Windows Server 2008) Generated when properties of a global security group are changed. 
+ 	642	User account changed. (Legacy, pre-Windows Server 2008) Occurs when attributes of a user account are modified. 
+ 	643	Domain Policy changed. (Legacy, pre-Windows Server 2008) Logged when domain or directory service policy is modified. 
+ 	644	User account locked out. (Legacy, pre-Windows Server 2008) Occurs when a user account is locked out after failed logon attempts. 
+ 	645	Computer account created. (Legacy, pre-Windows Server 2008) Generated when a new computer account is created. 
+ 	646	Computer account changed. (Legacy, pre-Windows Server 2008) Occurs when attributes of a computer account are modified. 
+ 	647	Computer account deleted. (Legacy, pre-Windows Server 2008) Occurs when a computer account is deleted. 
+ 	648	Security-disabled local group created. (Legacy, pre-Windows Server 2008) Generated when a new local distribution group (not a security group) is created. 
+ 	649	Security-disabled local group changed. (Legacy, pre-Windows Server 2008) Occurs when properties of a local distribution (non-security) group are modified. 
+ 	650	Security-disabled local group member added. (Legacy, pre-Windows Server 2008) Logged when a member is added to a local distribution group. 
+ 	651	Security-disabled local group member removed. (Legacy, pre-Windows Server 2008) Occurs when a member is removed from a local distribution group. 
+ 	652	Security-disabled local group deleted. (Legacy, pre-Windows Server 2008) Generated when a local distribution group is deleted. 
+ 	653	Security-disabled global group created. (Legacy, pre-Windows Server 2008) Occurs when a new global distribution group is created. 
+ 	654	Security-disabled global group changed. (Legacy, pre-Windows Server 2008) Occurs when properties of a global distribution group are modified. 
+ 	655	Security-disabled global group member added. (Legacy, pre-Windows Server 2008) Logged when a member is added to a global distribution group. 
+ 	656	Security-disabled global group member removed. (Legacy, pre-Windows Server 2008) Occurs when a member is removed from a global distribution group. 
+ 	657	Security-disabled global group deleted. (Legacy, pre-Windows Server 2008) Occurs when a global distribution group is deleted. 
+ 	658	Security-enabled universal group created. (Legacy, pre-Windows Server 2008) Logged when a new universal security group is created. 
+ 	659	Security-enabled universal group changed. (Legacy, pre-Windows Server 2008) Occurs when attributes or membership of a universal security group is modified. 
+ 	660	Security-enabled universal group member added. (Legacy, pre-Windows Server 2008) Logged when a member is added to a universal security group. 
+ 	661	Security-enabled universal group member removed. (Legacy, pre-Windows Server 2008) Occurs when a member is removed from a universal security group. 
+ 	662	Security-enabled universal group deleted. (Legacy, pre-Windows Server 2008) Generated when a universal security group is deleted. 
+ 	663	Security-disabled universal group created. (Legacy, pre-Windows Server 2008) Occurs when a new universal distribution (non-security) group is created. 
+ 	664	Security-disabled universal group changed. (Legacy, pre-Windows Server 2008) Occurs when properties of a universal distribution group are modified. 
+ 	665	Security-disabled universal group member added. (Legacy, pre-Windows Server 2008) Logged when a member is added to a universal distribution group. 
+ 	666	Security-disabled universal group member removed. (Legacy, pre-Windows Server 2008) Occurs when a member is removed from a universal distribution group. 
+ 	667	Security-disabled universal group deleted. (Legacy, pre-Windows Server 2008) Occurs when a universal distribution group is deleted. 
+ 	668	Group type changed. (Legacy, pre-Windows Server 2008) Generated when the type of a group (security/distribution or scope) is altered. 
+ 	669	Add SID History to account. (Legacy, pre-Windows Server 2008) Occurs when the SID history attribute of a user or group is updated. 
+ 	670	Remove SID History from account. (Legacy, pre-Windows Server 2008) Logged when SID history is removed from a user or group. 
+ 	671	SID History was used in an account. (Legacy, pre-Windows Server 2008) Indicates successful authentication using SID history for backwards compatibility. 
+ 	672	Authentication ticket granted. Occurs when an account is granted a Kerberos TGT (old event, pre-Windows Server 2008). 
+ 	673	Service ticket granted. Logged when an account is granted a Kerberos service ticket (pre-Windows Server 2008). 
+ 	674	Ticket granting ticket renewed. Indicates a Kerberos TGT was renewed (pre-Windows Server 2008). 
+ 	675	Pre-authentication failed. Logged when Kerberos pre-authentication fails for a user (pre-Windows Server 2008). 
+ 	676	Authentication ticket request failed. Occurs when a request for a Kerberos TGT fails (pre-Windows Server 2008). 
+ 	677	Service ticket request failed. Indicates a failed attempt to get a service ticket (pre-Windows Server 2008). 
+ 	678	Account mapped for logon. Occurs when a Kerberos ticket is successfully mapped to a local account (pre-Windows Server 2008). 
+ 	679	Account could not be mapped for logon. Shows failure to map a Kerberos ticket to a local account (pre-Windows Server 2008). 
+ 	680	Account used for logon by a user. Indicates a successful or failed logon attempt (pre-Windows Server 2008; replaced by 4624/4625). 
+ 	681	Logon attempt failed. Occurs when a user logon attempt fails (pre-Windows Server 2008). 
+ 	682	A user has reconnected to a disconnected Terminal Services session. (Legacy, pre-Windows Server 2008) Occurs when a user reattaches to a session they previously disconnected from on Terminal Services. 
+ 	683	A user disconnected from a Terminal Services session. (Legacy, pre-Windows Server 2008) Logged when a user disconnects a Terminal Services session but does not log off. 
+ 	684	Set account restriction. (Legacy, pre-Windows Server 2008) Occurs when account restrictions such as logon times or workstation restrictions are set. 
+ 	685	Account locked out. (Legacy, pre-Windows Server 2008) Logged when an account is locked out due to failed logon attempts. 
+ 	686	Password expiration warning. (Legacy, pre-Windows Server 2008) Occurs when a user is notified that their password is about to expire. 
+ 	687	Successful logon using explicit credentials. (Legacy, pre-Windows Server 2008) Indicates a successful interactive or network logon using explicit credentials. 
+ 	688	User attempted to modify privileged account. (Legacy, pre-Windows Server 2008) Logged when there is an attempt to modify an account with administrative privileges. 
+ 	689	User attempted to perform unauthorized operation. (Legacy, pre-Windows Server 2008) Occurs when a user tries to perform an action they do not have permissions for. 
+ 	690	Account logon failure. (Legacy, pre-Windows Server 2008) Logged when a logon attempt using a user account fails. 
+ 	691	Account logon success. (Legacy, pre-Windows Server 2008) Occurs when a user successfully logs on. 
+ 	692	IP Security Services started. (Legacy, pre-Windows Server 2008) Indicates that IPsec (Internet Protocol Security) services have started on the computer. 
+ 	693	IP Security Services ended. (Legacy, pre-Windows Server 2008) Logged when IPsec services have stopped. 
+ 	694	IP Security Policy Agent started. (Legacy, pre-Windows Server 2008) Occurs when the policy agent service for IPsec has started. 
+ 	695	IP Security Policy Agent ended. (Legacy, pre-Windows Server 2008) Logged when the IPsec policy agent has stopped. 
+ 	696	IPsec policy agent failed to start. (Legacy, pre-Windows Server 2008) Indicates a failure when starting the IPsec policy agent. 
+ 	697	IPsec policy agent encountered an error. (Legacy, pre-Windows Server 2008) Logged when the IPsec policy agent experiences an error. 
+ 	806	IPsec Services has started successfully. Logged when the IPsec Services start on the machine, enabling IPsec functionality. 
+ 	807	IPsec Services has shut down successfully. Occurs when the IPsec Services stop or are gracefully shut down on the machine. 
+ 	808	IPsec Services encountered an error while applying filters. Logged if IPsec can't apply one or more policy filters (may indicate configuration or network issues). 
+ 	809	IPsec encountered a potentially incompatible filter. Occurs when IPsec tries to apply or match a filter with potentially incompatible parameters. 
+ 	848	SMB signing enabled. Logged when Server Message Block (SMB) signing is enabled for SMB traffic to ensure integrity/authenticity. 
+ 	849	SMB signing disabled. Occurs when SMB signing is disabled, meaning SMB traffic will not require digital signatures. 
+ 	850	SMB encryption enabled. Logged when encryption for Server Message Block (SMB) traffic is enabled to ensure confidentiality. 
+ 	851	SMB encryption disabled. Occurs when SMB encryption is disabled, meaning SMB traffic will not be encrypted. 
+ 	852	A device was ejected from the system. Logged when a device (such as USB storage) is safely ejected or removed from the system. 
+ 	853	An attempt was made to eject a device. Occurs when an action is taken to eject a removable device (e.g., via Safely Remove Hardware). 
+ 	854	Device removal blocked by policy. Logged when the removal of a device is prevented due to Group Policy or other device control policy. 
+ 	855	Device removal allowed by policy. Occurs when policy allows the successful removal of a device from the system. 
+ 	856	Device installation blocked by policy. Logged when system policy prevents the installation of a new device (hardware or drivers). 
+ 	857	Device installation allowed by policy. Occurs when policy allows the installation of a device. 
+ 	858	Device driver installation blocked by policy. Logged when system policy prevents the installation of a device driver. 
+ 	859	Device driver installation allowed by policy. Occurs when the installation of a device driver is permitted under current policy. 
+ 	860	Device setup class installation blocked by policy. Logged when policy blocks the installation of a device associated with a specific setup class. 
+ 	861	Trusted logon process has been registered with the Local Security Authority. (Legacy, pre-Windows Server 2008) Occurs when a new trusted logon process is registered with LSA (variant of 4616/5169). 
+ 	1074	System has been shutdown by a process or user.
+This event is generated when an application causes the system to restart, or when the user initiates a restart or shutdown. It is logged on domain controllers, member servers, and workstations. 
+ 	1100	The event logging service has shut down.
+This event is generated during a normal system shutdown, and when the Windows Event Log service shuts down. It is logged on domain controllers and member computers. 
+ 	1101	Audit events have been dropped by the transport.
+This event is generated when restarting Windows after a dirty shutdown. It is logged on domain controllers, member servers, and workstations 
+ 	1102	The audit log was cleared.
+This event is generated whenever the security log is cleared. It is logged on domain controllers and member computers. 
+ 	1104	The security log is now full.
+This event is generated when the Windows security log becomes full. It is logged on domain controllers, member servers, and workstations. 
+ 	1105	Event log automatic backup.
+This event is generated when the Windows security log becomes full and a new event log file is created (for example, when the maximum size of Security Event Log file is reached and event log retention method has been set to “Archive the log when full, do not overwrite events”). It is logged on domain controllers, member servers, and workstations. 
+ 	1108	The event logging service encountered an error.
+This event is generated when the event logging service encounters an error while processing an incoming event. It is logged on domain controllers, member servers, and workstations. 
+ 	1200	Application token success.
+This event is generated every time an application token is issued successfully by AD FS for an authentication request. It is logged only on a federation server. 
+ 	1201	Application token failure.
+This event is generated every time an application token issuance by AD FS fails for an authentication request. It is logged only on a federation server. 
+ 	1202	Fresh credential validation success.
+This event is generated when fresh credentials are validated successfully by AD FS. It is logged on domain controllers and member computers. 
+ 	1203	Fresh credential validation error.
+This event is generated when fresh credential validation fails in AD FS. It is logged on domain controllers and member computers. 
+ 	1210	Extranet lockout.
+This event is generated when a user is locked out of, or when a locked out user attempts to log in to, AD FS. It is logged on domain controllers and member computers. 
+ 	1317	LDAP connection timed out.
+This event is generated when the local domain controller disconnects the LDAP connection from the specified network address because of a time-out. It is logged only on domain controllers. 
+ 	1458	FSMO role transferred.
+This event is generated when an FSMO role is transferred from one domain controller to another. It is logged only on domain controllers. 
+ 	1644	LDAP searches.
+This event is generated when an LDAP search made by a client against the directory breaches the inexpensive and/or inefficient search thresholds (it will only be logged if you set the Field Engineering reg key to 5 or higher). It is logged only on domain controllers. 
+ 	1837	An attempt to transfer the operations master role failed.
+This event is generated every time an attempt to transfer the FSMO role by the user fails. It is logged only on domain controllers. 
+ 	2089	This directory partition has not been backed up since at least the following number of days.
+This event is generated every time a backup hasn't been created since the enabled backup latency threshold. It is logged only on domain controllers. 
+ 	2092	FSMO replication.
+This event is generated when a server is the owner of an FSMO role but does not consider it valid (replication errors prevent validation of the role). It is logged only on domain controllers. 
+ 	2093	FSMO role not responding.
+This event is generated every time the remote server, that is, the Flexible Single Master Operations (FSMO), is unresponsive. It is logged only on domain controllers. 
+ 	2887	LDAP signing.
+This event is generated when a client computer attempts an unsigned LDAP bind. It is logged only on domain controllers. 
+ 	2889	Lightweight Directory Access Protocol (LDAP) bind.
+This event is generated every time a client initiates an LDAP bind without requesting the verification that the directory server is not configured to reject. It is logged only on domain controllers. 
+ 	4608	Windows is starting up.
+This event is generated when a Windows machine is started. It is logged on domain controllers and member computers. 
+ 	4609	Windows is shutting down.
+This event is generated when a Windows machine is shutting down. It is logged on domain controllers and member computers. 
+ 	4610	An authentication package has been loaded by the Local Security Authority.
+This event is generated at startup for each authentication package on the system. It is logged on domain controllers and member computers. 
+ 	4611	A trusted logon process has been registered with the Local Security Authority.
+This event is generated when a logon process is registered with the Local Security Authority to submit trusted logon requests. It is logged on domain controllers and member computers. 
+ 	4612	Internal resources allocated for queuing audit messages were exhausted, leading to loss of audit events. Occurs when the audit log buffer is full and events are lost. 
+ 	4614	A notification package has been loaded by the Security Account Manager.
+This event is generated when a user attempts to change their password. It is logged on domain controllers and member computers. 
+ 	4615	Invalid use of LPC port. Logged when an application or process attempts to perform an operation using a Local Procedure Call port in an invalid or unauthorized manner. 
+ 	4616	The system time was changed.
+This event is generated when the system time is changed. It is logged on domain controllers and member computers. 
+ 	4618	A monitored security event pattern has occurred.
+This event is generated when Windows is configured to generate alerts per the Common Criteria security audit analysis requirements and an auditable event pattern occurs. It is logged on domain controllers and member computers. 
+ 	4621	Administrator recovered system from CrashOnAuditFail. Logged when an admin re-enables audit logging after the system was locked down due to audit log failure. 
+ 	4622	A security package has been loaded by the Local Security Authority.
+This event is generated when a security package is loaded by the Local Security Authority. It is logged on domain controllers and member computers. 
+ 	4624	An account was successfully logged on. Indicates a successful logon to the system by a user or computer. 
+ 	4625	An account failed to log on. Occurs when a logon attempt to the system is unsuccessful. 
+ 	4626	User/Device claims information. Logged when a user or device claims (e.g., tokens or certificates) are processed during authentication. 
+ 	4627	Group membership information. Occurs when group membership data is retrieved for an account during logon. 
+ 	4634	An account was logged off. Indicates that a user or service logged off from the computer. 
+ 	4646	IKE DoS-prevention mode started. Logged when the system initiates Internet Key Exchange (IKE) DoS prevention features. 
+ 	4647	User initiated logoff.
+This event is generated when logoff is initiated. It is logged on domain controllers, member servers, and workstations. 
+ 	4648	A logon was attempted using explicit credentials.
+This event is generated every time a process attempts to log on to an account by explicitly specifying that account's credentials. It is logged on domain controllers, member servers, and workstations. 
+ 	4649	A replay attack was detected.
+This event is generated when the same packets are sent by a misconfigured network device between the server and the client. It is logged on domain controllers and member computers. 
+ 	4650	An IPsec Main Mode security association was established. Logged when a successful IPsec Main Mode security association is negotiated. 
+ 	4651	An IPsec Main Mode security association was deleted. Occurs when an IPsec Main Mode security association is deleted or expires. 
+ 	4652	An IPsec Quick Mode security association was established. Logged when a Quick Mode (IPsec) security association is successfully established. 
+ 	4653	An IPsec Quick Mode security association was deleted. Occurs when an IPsec Quick Mode security association is deleted or expires. 
+ 	4654	An IPsec Extended Mode security association was established. Logged when an IPsec Extended Mode security association is successfully created. 
+ 	4655	An IPsec Extended Mode security association was deleted. Occurs when an IPsec Extended Mode security association is deleted or expires. 
+ 	4656	A handle to an object was requested.
+This event is generated every time specific access is requested for an object. The object could be a file system, kernel, or registry object, or a file system object on removable storage or a device. It is logged on domain controllers, member servers, and workstations. 
+ 	4657	A registry value was modified. Occurs when a value of a registry key is added, changed, or deleted. 
+ 	4658	The handle to an object was closed. Logged when a previously opened handle to an object (like a file or registry key) is closed. 
+ 	4659	A handle to an object was requested with intent to delete.
+This event is generated when an installed patch requires the replacement of a file opened by Windows. It is logged on domain controllers and member computers. 
+ 	4660	An object was deleted. Logged when an object (file, registry key, etc.) is actually deleted from the system. 
+ 	4661	A handle to an object was requested with an explicit handle right. Occurs when a handle to an object is requested specifying access permissions (rights). 
+ 	4662	An operation was performed on an object.
+This event is generated when a user accesses an Active Directory object. It is logged only on domain controllers. 
+ 	4663	An attempt was made to access an object. Logged on access attempts to an object, such as read, write, or delete actions. 
+ 	4664	An attempt was made to create a hard link. Occurs when a process tries to create a hard link to an existing file. 
+ 	4665	An attempt was made to create an application client context. Logged when a process or user creates a client context for an application, typically for resource access or authorization. 
+ 	4666	An application attempted an operation. Occurs when an application makes an attempt to perform an operation; details provided in the event specify operation type. 
+ 	4667	An application client context was deleted. Logged when a previously created application client context is removed or destroyed. 
+ 	4668	An application was initialized. Occurs when an application initializes a new client context for access or an action. 
+ 	4670	Permissions on an object were changed.
+This event is generated every time a user modifies the access control list of an Active Directory object. It is logged on domain controllers, member servers, and workstations. 
+ 	4671	An application attempted to access a protected object. Occurs when an application tries to gain access to a system-protected object (such as file, registry key, etc.). 
+ 	4672	Special privileges assigned to new logon.
+This event is generated every time sensitive privileges are assigned to a new logon session. It is logged on domain controllers, member servers, and workstations. 
+ 	4673	A privileged service was called. Logged when a process requests use of a privileged system service, typically via a special system call by a high-privilege account. 
+ 	4674	An operation was attempted on a privileged object. Occurs when a process or user attempts access or operation on a system object requiring special privileges (e.g., debug, backup). 
+ 	4675	SIDs were filtered. Occurs when Security Identifiers (SIDs) are filtered from an access token during authentication, often for security or trust boundary reasons. 
+ 	4688	A new process has been created. Logged whenever a process (program, executable) starts on the system. 
+ 	4689	A process has exited.
+This event is generated when a process ends. It is logged on domain controllers, member servers, and workstations. 
+ 	4690	An attempt was made to duplicate a handle to an object. Logged when a handle to a system object (file, registry, etc.) is duplicated (for use by another process or user). 
+ 	4691	Indirect access to an object was requested. Occurs when a process requests indirect access (such as via symbolic link or remote API) to a secure object. 
+ 	4692	Backup of data protection master key was attempted. Logged when an attempt is made to back up the master key used by Windows Data Protection API (DPAPI), usually for recovery purposes. 
+ 	4693	Recovery of data protection master key was attempted. Logged when a process tries to recover the master key for the Windows Data Protection API (DPAPI), usually for decrypting protected data. 
+ 	4694	Protection of auditable protected data was attempted. Occurs when the system attempts to apply protection to data that is under audit policy (e.g., DPAPI-encrypted data). 
+ 	4695	Unprotection of auditable protected data was attempted. Logged when a process attempts to decrypt (unprotect) data that is subject to audit policy, such as DPAPI-encrypted data. 
+ 	4696	A primary token was assigned to process. Occurs when a process is assigned a user security token that determines its permissions and access. 
+ 	4697	A service was installed in the system. Logged when a new system service is installed (which could indicate a new or malicious service). 
+ 	4698	A scheduled task was created.
+This event is generated when a new scheduled task is created. It is logged on domain controllers, member servers, and workstations. 
+ 	4699	A scheduled task was deleted.
+This event is generated when a scheduled task is deleted. It is logged on domain controllers, member servers, and workstations. 
+ 	4700	A scheduled task was enabled.
+This event is generated when a scheduled task is enabled. It is logged on domain controllers, member servers, and workstations. 
+ 	4701	A scheduled task was disabled.
+This event is generated when a scheduled task is disabled. It is logged on domain controllers, member servers, and workstations. 
+ 	4702	A scheduled task was updated.
+This event is generated when a scheduled task is updated or changed. It is logged on domain controllers, member servers, and workstations. 
+ 	4703	A token right was adjusted. Occurs when user rights associated with an access token are changed, such as privilege elevation or restriction. 
+ 	4704	A user right was assigned.
+This event is generated when a user is assigned privileges. It is logged only on domain controllers. 
+ 	4705	A user right was removed.
+This event is generated when a user's privileges are removed. It is logged only on domain controllers. 
+ 	4706	A new trust was created to a domain. Logged when a trust relationship with another domain is established. 
+ 	4707	A trust to a domain was removed. Occurs when a domain trust relationship is deleted. 
+ 	4709	IPsec Services was started. Logged when IPsec Services starts on the system, enabling IPsec-based secure communications. 
+ 	4710	IPsec Services was disabled. Occurs when IPsec Services are stopped or disabled on the machine. 
+ 	4711	Kerberos policy was changed. Logged when the Kerberos authentication policy settings are modified in the domain or system. 
+ 	4712	A trusted domain object was created. Occurs when a trusted domain object (for inter-domain trust) is created in Active Directory. 
+ 	4713	Kerberos policy was changed.
+This event is generated when the Kerberos policy is changed. It is logged only on domain controllers. 
+ 	4714	Encrypted data recovery policy was changed.
+This event is generated when a computer's Security Settings\Public Key Policies\Encrypting File System data recovery agent policy is modified (either via Local Security Policy or Group Policy in Active Directory). It is logged on domain controllers, member servers, and workstations. 
+ 	4715	The audit policy (SACL) on an object was changed. Logged when the System Access Control List (SACL) for auditing is modified on a file, object, or directory. 
+ 	4716	Trusted domain information was modified. Occurs when trusted domain information in Active Directory is changed (e.g., SID, attributes). 
+ 	4717	System security access was granted to an account.
+This event is generated when a logon right (such as "Access this computer from the network") is granted to an account. It is logged on domain controllers, member servers, and workstations. 
+ 	4718	System security access was removed from an account.
+This event is generated when a logon right (such as "Access this computer from the network") is removed from an account. It is logged on domain controllers, member servers, and workstations. 
+ 	4719	System audit policy was changed.
+This event is generated when an audit policy is disabled, regardless of the "Audit Policy Change" sub-category setting. It is logged on domain controllers and member computers. 
+ 	4720	A user account was created.
+This event is generated every time a new user account is created. It is logged on domain controllers, member servers, and workstations. 
+ 	4722	A user account was enabled.
+This event is generated every time a user or computer account is enabled. For user objects, it is logged on domain controllers, member servers, and workstations. For computers, it is logged only on domain controllers. 
+ 	4723	An attempt was made to change an account's password. Logged when a user attempts to change their own password. 
+ 	4724	An attempt was made to reset an account's password. Generated when one account attempts to reset the password for another account. 
+ 	4725	A user account was disabled. Logged whenever a user account is disabled. 
+ 	4726	A user account was deleted.
+This event is generated every time a user object is deleted. It is logged on domain controllers, member servers, and workstations 
+ 	4727	A security-enabled global group was created.
+This event is generated every time a user creates a security group with global scope. It is logged only on domain controllers. 
+ 	4728	A member was added to a security-enabled global group.
+This event is generated every time a user, computer, or group is added to a security group with global scope. It is logged only on domain controllers. 
+ 	4729	A member was removed from a security-enabled global group.
+This event is generated when a user, group, or computer is removed from a security-enabled global group. It is logged only on domain controllers. 
+ 	4730	A security-enabled global group was deleted. Generated when a global security group is deleted. 
+ 	4731	A security-enabled local group was created.
+This event is generated when a security-enabled local group is created. It is logged on domain controllers for domain local groups, or on member computers for local SAM groups. 
+ 	4732	A member was added to a security-enabled local group.
+This event is generated when users, groups, or computers are added to a security-enabled local group. It is logged on domain controllers for domain local groups, or on member computers for local SAM groups. 
+ 	4733	A member was removed from a security-enabled local group. Generated when a member is removed from a local security group. 
+ 	4734	A security-enabled local group was deleted.
+This event is generated when a security-enabled local group is deleted. It is logged on domain controllers for domain local groups, or on member computers for local SAM groups. 
+ 	4735	A security-enabled local group was changed.
+This event is generated when a security-enabled local group is modified. It is logged on domain controllers for domain local groups, or on member computers for local SAM groups. 
+ 	4737	A security-enabled global group was changed. Generated when properties of a global security group are modified. 
+ 	4738	A user account was changed. Occurs when any attribute of a user account is modified, except for password changes. 
+ 	4739	Domain Policy was changed.
+This event is generated when an Active Directory Domain Policy is changed. It is logged on domain controllers and member computers. 
+ 	4740	A user account was locked out. Generated when a user account is locked out due to too many failed logon attempts. 
+ 	4741	A computer account was created.
+This event is generated when a new computer object is created. It is logged only on domain controllers. 
+ 	4742	A computer account was changed. Logged when properties of a computer account are modified. 
+ 	4743	A computer account was deleted.
+This event is generated when a computer object is deleted. It is logged only on domain controllers. 
+ 	4744	A security-disabled local group was created.
+This event is generated every time a user creates a distribution group with domain local scope. It is logged only on domain controllers. 
+ 	4745	A security-disabled local group was changed.
+This event is generated every time a user modifies a distribution group with domain local scope. It is logged only on domain controllers. 
+ 	4746	A member was added to a security-disabled local group.
+This event is generated every time a user, computer, or group is added to a distribution group with domain local scope. It is logged only on domain controllers. 
+ 	4747	A member was removed from a security-disabled local group.
+This event is generated every time a user, computer, or group is removed from a distribution group with domain local scope. It is logged only on domain controllers. 
+ 	4748	A security-disabled local group was deleted.
+This event is generated every time a distribution group with domain local scope is deleted. It is logged only on domain controllers. 
+ 	4749	A security-disabled global group was deleted. Generated when a global distribution group is deleted. 
+ 	4750	A security-disabled global group was changed.
+This event is generated every time a user modifies a distribution group with global scope. It is logged only on domain controllers. 
+ 	4751	A member was added to a security-disabled global group.
+This event is generated every time a user, computer, or group is added to a distribution group with global scope. It is logged only on domain controllers. 
+ 	4752	A member was removed from a security-disabled global group.
+This event is generated every time a user, computer, or group is removed from a distribution group with global scope. It is logged only on domain controllers. 
+ 	4753	A security-disabled global group was deleted.
+This event is generated every time a distribution group with global scope is deleted. It is logged only on domain controllers. 
+ 	4754	A security-enabled universal group was created.
+This event is generated when a universal security group is created. It is logged only on domain controllers. 
+ 	4755	A security-enabled universal group was changed.
+This event is generated when a universal security group is changed. It is logged only on domain controllers. 
+ 	4756	A member was added to a security-enabled universal group. Logged when a user or group is added to a universal security group. 
+ 	4757	A member was removed from a security-enabled universal group.
+This event is generated when a member is removed from a universal security group. It is logged only on domain controllers. 
+ 	4758	A member was added to a security-disabled universal group. Logged when a user or group is added to a universal distribution group. 
+ 	4759	A security-disabled universal group was created.
+This event is generated when a universal distribution group is created. It is logged only on domain controllers. 
+ 	4760	A security-disabled universal group account was changed.
+This event is generated when a universal distribution group is changed. It is logged only on domain controllers. 
+ 	4761	A member was added to a security-disabled universal group.
+This event is generated when Active Directory objects, such as users, groups, or computers, are added to a universal distribution group. It is logged only on domain controllers. 
+ 	4762	A member was removed from a security-disabled universal group.
+This event is generated when Active Directory objects, such as users, groups, or computers, are removed from a universal distribution group. It is logged only on domain controllers. 
+ 	4763	A security-disabled universal group was deleted.
+This event is generated when a universal distribution group is deleted. It is logged only on domain controllers. 
+ 	4764	A group type was changed.
+This event is generated when a group type or scope is changed. It is logged only on domain controllers. 
+ 	4765	SID History was added to an account.
+This event is generated when SID History is added to an account in Active Directory. It is logged on domain controllers and member computers. 
+ 	4766	An attempt to add SID History to an account failed.
+This event is generated when there is an attempt to add SID History to an account. It is logged on domain controllers and member computers. 
+ 	4767	A user account was unlocked.
+This event is generated when a user account gets unlocked (when the Unlock Account checkbox on the user's account tab is selected). It is logged on domain controllers, member servers, and workstations. 
+ 	4768	A Kerberos authentication ticket (TGT) was requested.
+This event is generated every time a user's credentials are checked out. It is logged only on domain controllers for both success and failure events. 
+ 	4769	A Kerberos service ticket was requested. Logged when an account requests a Kerberos service ticket to access a specific service on the network. 
+ 	4770	A Kerberos service ticket was renewed. Indicates that a previously issued Kerberos service ticket was renewed. 
+ 	4771	Kerberos pre-authentication failed.
+This event is generated every time a request for a TGT fails (e.g., due to a bad or expired password). It is logged only on domain controllers and only for failure events. 
+ 	4772	A Kerberos authentication ticket request failed. Occurs when the domain controller fails to issue a TGT (may be due to various authentication failures). 
+ 	4773	A Kerberos service ticket request failed. Indicates failure when attempting to request a Kerberos service ticket. 
+ 	4774	An account was mapped for logon. Occurs when a Kerberos ticket is mapped to a local account during the logon process. 
+ 	4775	An account could not be mapped for logon. Indicates failure to map a Kerberos ticket to a local account during logon. 
+ 	4776	The domain controller attempted to validate the credentials for an account. Logged whenever a domain controller validates account credentials (for example, during NTLM authentication). 
+ 	4777	The domain controller failed to validate the credentials for an account. Occurs if a logon attempt fails NTLM validation. 
+ 	4778	A session was reconnected to a Window Station.
+This event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching. It is logged on domain controllers, member servers, and workstations. 
+ 	4779	A session was disconnected from a Window Station.
+This event is generated when a user disconnects from an existing Terminal Services session, or when a user switches away from an existing desktop using Fast User Switching. It is logged on domain controllers, member servers, and workstations. 
+ 	4780	The ACL was set on accounts which are members of administrators groups. Indicates that the Access Control List (ACL) on members of administrator groups has been changed. 
+ 	4781	The name of an account was changed.
+This event is generated when the name of a user or computer account (sAMAccountName attribute) is changed. It is logged only on domain controllers for computer accounts, and on domain controllers and member computers for user accounts. 
+ 	4782	The password hash of an account was accessed. Occurs when processes or users attempt to read the password hashes of accounts. 
+ 	4783	A basic application group was created. Logged when an application group object is created in Active Directory. 
+ 	4784	A basic application group was changed. Occurs when properties of an application group are modified. 
+ 	4785	A member was added to a basic application group. Logged when a user or other security principal is added to an application group. 
+ 	4786	A member was removed from a basic application group. Occurs when a member is removed from an application group. 
+ 	4787	A non-member was added to a basic application group. Logged when a user is explicitly excluded from an application group. 
+ 	4788	A non-member was removed from a basic application group. Occurs when an explicit exclusion is removed from an application group. 
+ 	4789	A basic application group was deleted. Logged when an application group object is deleted. 
+ 	4790	An LDAP query group was created. Occurs when a new application LDAP query group is created. 
+ 	4791	A member was added to a LDAP query group. Logged when a member is added to an LDAP query group. 
+ 	4792	A member was removed from a LDAP query group. Occurs when a member is removed from an LDAP query group. 
+ 	4793	The Password Policy Checking API was called. Logged when password compliance checks are performed, such as validating password complexity requirements. 
+ 	4794	An attempt was made to set the Directory Services Restore Mode administrator password.
+This event is generated when the Directory Services Restore Mode (DSRM) administrator password is changed. It is logged only on domain controllers. 
+ 	4797	An attempt was made to query the existence of a blank password for an account. Logged when a system checks if an account has a blank password. 
+ 	4798	A user's local group membership was enumerated.
+This event is generated every time a process enumerates the list of security groups that a user belongs to. It is logged on member servers and workstations. 
+ 	4799	A security-enabled local group membership was enumerated.
+This event is generated when a process enumerates a user's local security groups on a computer or device. It is logged on domain controllers and member computers. 
+ 	4800	A workstation was locked.
+This event is generated when a workstation is locked (when a user manually locks their workstation, or when the workstation automatically locks itself after a period of inactivity). It is logged only on workstations. 
+ 	4801	A workstation was unlocked.
+This event is generated when a workstation is unlocked. It is logged only on workstations. 
+ 	4802	The screen saver was invoked.
+This event is generated when a workstation activates the screen saver in response to a period of inactivity. It is logged only on workstations. 
+ 	4803	The screen saver was dismissed.
+This event is generated every time a user dismisses their screen saver. It is logged on domain controllers, member servers, and workstations. 
+ 	4816	RPC detected an integrity violation while decrypting an incoming message. Logged when Remote Procedure Call detects tampered, invalid, or failed integrity check during decryption of a message. 
+ 	4817	Auditing settings on object were changed. Occurs when SACL (System Access Control List) auditing settings for an Active Directory object are modified. 
+ 	4818	Proposed Central Access Policy does not grant the same access as the current Central Access Policy. Occurs when a proposed policy differs in effective permissions from the current policy, indicating a potential change to access rights. 
+ 	4819	Central Access Policies on the object were changed. Logged when central access policies (CAPs) are changed on a file or folder for dynamic access control. 
+ 	4820	Kerberos pre-authentication by using DES or RC4 failed because the account was configured to require AES encryption. Logged when an account expects stronger encryption and the request was made using weaker algorithms. 
+ 	4821	Password history was cleared. Occurs when the password history for an account is removed or reset, potentially impacting policy enforcement. 
+ 	4822	NTFS permissions on an object were changed. Logged when NTFS access permissions are modified for a file or directory. 
+ 	4823	NTFS permissions on an object were removed. Occurs when permissions are deleted from an NTFS-secured object. 
+ 	4824	An attempt was made to set the Directory Services Restore Mode administrator password. Logged when an attempt is made to change the DSRM administrator password (duplicate/variant of 4794). 
+ 	4825	A user was denied the ability to log on through Remote Interactive logon. Occurs when a user attempts RDP logon but is denied due to policy. 
+ 	4826	Boot Configuration Data loaded. Occurs when the system loads Boot Configuration Data (BCD), typically at startup. 
+ 	4864	An authentication certificate was imported by a user. Logged when a user imports a certificate intended for authentication use. 
+ 	4865	A trusted forest information entry was added to the system. Logged when a new trusted forest (for cross-forest authentication) is added in Active Directory. 
+ 	4866	A trusted forest information entry was removed from the system. Occurs when a trusted forest entry is deleted from the system/Active Directory. 
+ 	4867	A trusted forest information entry was modified. Logged when properties or settings for an existing trusted forest are changed. 
+ 	4868	The certificate store could not be opened. Logged when the system is unable to open a certificate store (for user, computer, or service). 
+ 	4869	A certificate was mapped to a logon account. Occurs when a digital certificate is associated (mapped) with a user account for authentication. 
+ 	4870	Certificate Services received a request to publish the certificate revocation list (CRL). Logged when a request is made to Certificate Services to publish a new or updated CRL. 
+ 	4871	Certificate Services published the certificate revocation list (CRL). Occurs when Certificate Services successfully publishes a CRL. 
+ 	4872	Certificate Services received a request to publish the delta CRL. Logged when a request is made to publish only the changes (delta) to the CRL. 
+ 	4873	Certificate Services published the delta CRL. Occurs when Certificate Services successfully publishes the delta (differential) CRL. 
+ 	4874	Certificate Services received a request to publish the key recovery agent (KRA) certificate list. Logged when a request is made to Certificate Services to publish the current list of key recovery agent certificates. 
+ 	4875	Certificate Services published the key recovery agent (KRA) certificate list. Occurs when Certificate Services successfully publishes the KRA certificate list. 
+ 	4876	Certificate Services received a request to publish the certificate trust list (CTL). Logged when a request is made to Certificate Services to publish a certificate trust list. 
+ 	4877	Certificate Services published the certificate trust list (CTL). Occurs when Certificate Services successfully publishes a CTL. 
+ 	4878	Certificate Services received a request to publish the delta certificate trust list (CTL). Logged when a request is made to Certificate Services to publish only the changes (delta) to the CTL. 
+ 	4879	Certificate Services published the delta certificate trust list (CTL). Occurs when Certificate Services successfully publishes the delta CTL. 
+ 	4880	Certificate Services received a certificate request. Logged when Certificate Services receives a new request for a certificate. 
+ 	4881	Certificate Services approved a certificate request and issued a certificate. Occurs when a requested certificate is approved and issued by Certificate Services. 
+ 	4882	Certificate Services denied a certificate request. Logged when a certificate request is denied by Certificate Services. 
+ 	4883	Certificate Services set the request disposition to pending. Occurs when a certificate request is put in a pending state, waiting for further approval. 
+ 	4884	Certificate Services revoked a certificate. Logged when a certificate is revoked by Certificate Services and added to the CRL. 
+ 	4885	Certificate Services received a request to revoke a certificate. Occurs when Certificate Services receives a new request for certificate revocation. 
+ 	4886	Certificate Services restored a certificate from the archive. Logged when a previously archived certificate is restored from backup. 
+ 	4887	Certificate Services archived a key. Occurs when a private key is archived by Certificate Services for future recovery. 
+ 	4888	Certificate Services recovered an archived key. Logged when an archived private key is recovered from Certificate Services. 
+ 	4889	Certificate Services published the OCSP (Online Certificate Status Protocol) response. Occurs when Certificate Services issues/publishes an OCSP response for certificate status. 
+ 	4890	The certificate manager processed a pending certificate request. Logged when a certificate manager reviews and processes a certificate request that was previously set as pending. 
+ 	4891	Certificate Services revoked all certificates issued to a user. Occurs when all certificates previously issued to a user are revoked by Certificate Services. 
+ 	4892	A configuration entry changed in Certificate Services. Logged when a configuration change is made in the Certificate Services database or settings. 
+ 	4893	Certificate Services migrated an archived key. Occurs when an archived key is migrated (moved/upgraded) in Certificate Services. 
+ 	4894	Certificate Services imported a certificate into the certificate store. Logged when a certificate is imported into the Certificate Services certificate store. 
+ 	4895	Certificate Services published CRLs to a file. Occurs when Certificate Services saves/publishes certificate revocation lists to a file location. 
+ 	4896	Certificate Services imported a CRL into the certificate store. Logged when a certificate revocation list is imported into the Certificate Services store. 
+ 	4897	Role separation enabled.
+This event is generated when an AD CS server starts and whenever role separation is actually changed. It is logged only on Active Directory Certificate Services (AD CS) servers. 
+ 	4898	Certificate Services loaded a template. Occurs when Certificate Services loads a certificate template for issuance or management. 
+ 	4899	A certificate request extension changed. Logged when a certificate request’s extension is changed or modified by Certificate Services. 
+ 	4900	Certificate Services template security was updated. Occurs when the security permissions on a certificate template are changed. 
+ 	4902	The per-user audit policy table was created. Occurs when the system creates the storage structure for user-based audit policy settings. 
+ 	4904	An attempt was made to register a security event source. Logged when a process or service tries to register as a source of security events with the Windows Event Log. 
+ 	4905	An attempt was made to unregister a security event source. Occurs when a process/service unregisters as a security event source. 
+ 	4906	The CrashOnAuditFail value has changed. Logged when the system’s CrashOnAuditFail registry setting (to crash or lock out if audit logs can’t be written) is altered. 
+ 	4907	Auditing settings on an object were changed.
+This event is generated every time the SACL of an object, such as a file or a registry key, is changed. It is logged on domain controllers, member servers, and workstations. 
+ 	4908	The special groups logon table was modified.
+This event is generated every time a security identifier (SID) is added to a special group for auditing purposes. It is logged on domain controllers, member servers, and workstations. 
+ 	4909	The local policy settings for the Windows Firewall have been merged into effective policy. Occurs when local firewall settings are combined with Group Policy for effective enforcement. 
+ 	4910	The Windows Firewall exception list was modified. Logged when the firewall’s list of allowed programs or ports is changed. 
+ 	4911	Resource attributes of the object were changed. Occurs when resource attribute tags (used by Dynamic Access Control) are changed on a secured object. 
+ 	4912	Per user audit policy was changed. Logged when audit policy specifically for a user (rather than computer) is changed. 
+ 	4913	Central Access Policy on the object was changed. (Variant of 4819) Occurs when central access policies applied to a secured object are modified. 
+ 	4929	An Active Directory replica source naming context was added. Occurs when a new naming context is added as a replication source to a domain controller. 
+ 	4930	An Active Directory replica source naming context was modified. Logged when properties or settings for an AD replica source naming context are changed. 
+ 	4931	An Active Directory replica destination naming context was deleted. Occurs when a DC deletes a naming context that is a replication destination. 
+ 	4932	An Active Directory replica destination naming context was added. Logged when a domain controller adds a naming context as a destination for replication. 
+ 	4933	Synchronization of a replica of an Active Directory naming context has begun. Occurs when replication of a naming context starts between DCs. 
+ 	4934	Synchronization of a replica of an Active Directory naming context has ended. Logged when the synchronization/replication of a naming context completes. 
+ 	4935	Replication failure begins. Occurs when a domain controller encounters the start of a replication failure on a naming context. 
+ 	4936	Replication failure ends. Logged when an earlier AD replication failure is resolved and replication resumes. 
+ 	4937	A lingering object was removed from a replica. Occurs when a domain controller deletes a lingering (unexpected, outdated) object detected during replication. 
+ 	4944	The following policy was active when the Windows Firewall started. Logged when Windows Firewall starts and records which policy was active at startup. 
+ 	4945	A rule was listed when the Windows Firewall started. Occurs when Firewall records active rules as it starts. 
+ 	4946	A change has been made to Windows Firewall exception list. Logged whenever the exception (allowed) list for the firewall is changed. 
+ 	4947	A change has been made to Windows Firewall settings. Occurs when settings for Windows Firewall are modified, such as default action or profile settings. 
+ 	4948	A change has been made to Windows Firewall settings. (Variant of 4947) Logged for specific types of firewall changes. 
+ 	4949	A change has been made to Windows Firewall settings. (Variant of 4947/4948) Occurs when settings are modified. 
+ 	4950	A Windows Firewall setting has changed. General log when any Windows Firewall setting or configuration is changed. 
+ 	4951	A rule has been ignored by Windows Firewall because it could not be parsed. Logged when Windows Firewall encounters a rule it cannot interpret due to syntax or configuration error. 
+ 	4952	Parts of a rule have been ignored by Windows Firewall because they are not recognized or supported. Occurs when some elements of a firewall rule are unrecognized and therefore not applied. 
+ 	4953	Windows Firewall ignored a rule because it could not parse the rule. Logged when a firewall rule is ignored due to syntax or configuration errors. 
+ 	4954	Windows Firewall Group Policy settings have changed. Logged when Group Policy–based settings for Windows Firewall are updated on the system. 
+ 	4956	Windows Firewall has allowed an application to listen on a port for incoming traffic. Logged when an application or process is explicitly allowed to listen for inbound connections on a specified port. 
+ 	4957	Windows Firewall has blocked an application from listening on a port for incoming traffic. Occurs when an application is prevented from binding to a port to listen for inbound network traffic. 
+ 	4958	Windows Firewall did not apply the following rule because the rule referred to items not configured on this computer. Logged when a firewall rule is ignored because it references objects (e.g., interfaces) not present or configured. 
+ 	4960	IPsec dropped an inbound packet that failed an integrity check. Occurs when IPsec discards an inbound packet because data has been tampered with or failed validation. 
+ 	4961	IPsec dropped an inbound packet that failed a replay check. Logged when an inbound packet is discarded by IPsec because it appears to be a replayed packet. 
+ 	4962	IPsec dropped an inbound packet that failed a replay check. (Duplicate of 4961) Occurs when IPsec drops a potential replayed packet. 
+ 	4963	IPsec dropped an inbound packet that failed a replay check. (Duplicate/variant of 4961/4962) Logged for similar replay protection failures in IPsec. 
+ 	4964	This event is generated when an AD CS server starts and whenever role separation is actually changed. It is logged only on Active Directory Certificate Services (AD CS) servers.
+This event is generated when an account that is a member of any defined Special Group logs on. It is logged on domain controllers, member servers, and workstations. 
+ 	4965	IPsec received a packet from a remote computer with an incorrect Security Parameter Index (SPI). Occurs when an IPsec packet cannot be matched to an active security association due to SPI mismatch. 
+ 	4976	During Main Mode negotiation, IPsec received an invalid negotiation packet. Logged when IPsec Main Mode negotiation encounters an invalid or malformed packet.
+ 	4977	During Quick Mode negotiation, IPsec received an invalid negotiation packet. Occurs when IPsec Quick Mode negotiation receives an invalid packet. 
+ 	4978	During Extended Mode negotiation, IPsec received an invalid negotiation packet. Logged when IPsec Extended Mode negotiation receives an invalid packet. 
+ 	4979	IPsec Main Mode and Extended Mode security associations were established. Occurs when both Main and Extended Mode associations are established for IPsec. 
+ 	4980	IPsec Main Mode and Extended Mode security associations were deleted. Logged when Main and Extended Mode associations are deleted for IPsec. 
+ 	4981	IPsec QMSA deletion. (IPsec Quick Mode Security Association) Occurs when an IPsec Quick Mode Security Association is deleted. 
+ 	4982	IPsec Security Associations were established. Logged when new IPsec security associations are successfully created. 
+ 	4983	IPsec Security Associations were deleted. Occurs when IPsec security associations are deleted. 
+ 	4984	IPsec QMSA initialization failure. Logged when initialization of an IPsec Quick Mode Security Association fails. 
+ 	4985	The state of a transaction has changed. Logged when the transaction state of an object (such as a file or registry operation) is modified. 
+ 	5024	The Windows Firewall service started successfully. Logged when the Windows Firewall service is started on the system. 
+ 	5025	The Windows Firewall service has been stopped. Occurs when the Windows Firewall service is stopped on the computer. 
+ 	5027	The Windows Firewall service was unable to retrieve the security policy from the local computer. Logged when Windows Firewall cannot load or process the effective security policy. 
+ 	5028	The Windows Firewall service was unable to parse the security policy. Occurs when the firewall encounters a syntax or configuration error in the loaded policy. 
+ 	5029	The Windows Firewall service failed to initialize the driver. Logged when Windows Firewall cannot start because its driver failed to initialize. 
+ 	5030	The Windows Firewall service failed to start. Occurs when the Windows Firewall service encounters an error and does not start. 
+ 	5031	The Windows Firewall service blocked an application. Occurs when Windows Firewall blocks a network connection attempt by an application or process. 
+ 	5032	Windows Firewall was unable to notify the user that it blocked an application. Logged when the firewall blocks an app but cannot display a notification to the user. 
+ 	5033	The Windows Firewall Driver has started successfully. Occurs when the Windows Firewall low-level filter driver starts up on the system. 
+ 	5034	The Windows Firewall Driver has been stopped. Logged when the firewall driver stops operating on the system. 
+ 	5037	The Windows Firewall Driver detected critical runtime error. Occurs when a critical error occurs in the firewall’s driver, potentially affecting filtering. 
+ 	5038	Code integrity determined that the image hash of a file is not valid. Logged when Windows detects a file (driver, DLL, exe) with an invalid or tampered code integrity hash. 
+ 	5039	A cryptographic operation was attempted. Occurs when a protected cryptographic operation is performed—such as encryption, decryption, or signing. 
+ 	5040	A change has been made to IPsec settings. Logged when the IPsec configuration or policies have been modified. 
+ 	5041	A change has been made to IPsec settings. (Duplicate/variant of 5040) Occurs when IPsec policy or configuration changes. 
+ 	5042	A change has been made to IPsec settings. (Duplicate/variant of 5040/5041) Logged on additional or specific IPsec changes. 
+ 	5043	A change has been made to IPsec settings. (Duplicate/variant of 5040–5042) Occurs for policy or rule changes in IPsec. 
+ 	5044	A change has been made to IPsec settings. (Duplicate/variant of 5040–5043) Logged for IPsec policy/configuration changes. 
+ 	5045	A change has been made to IPsec settings. (Duplicate/variant of 5040–5044) Occurs for modifications to IPsec configuration or rules. 
+ 	5046	A change has been made to IPsec settings. (Duplicate/variant of 5040–5045) Logged for any additional changes to IPsec settings. 
+ 	5047	A change has been made to IPsec settings. (Duplicate/variant of 5040–5046) Occurs for continued tracking of IPsec configuration. 
+ 	5048	A change has been made to IPsec settings. (Duplicate/variant of 5040–5047) Logged on further changes to IPsec policy. 
+ 	5049	A change has been made to IPsec settings. (Duplicate/variant of 5040–5048) Occurs for tracking all IPsec settings modifications. 
+ 	5050	An attempt to programmatically disable the Windows Firewall using a call to INetFwProfile::put_FirewallEnabled failed. Logged when a process tries but fails to disable Windows Firewall via API. 
+ 	5051	A file was programmatically excluded from Windows Defender Antivirus scanning. Occurs when an exclusion for a file from antivirus scanning is applied using API or policy. 
+ 	5056	A cryptographic self-test was performed. Logged when Windows performs a self-test on its cryptographic modules to ensure integrity and correct operation. 
+ 	5057	A cryptographic primitive operation failed. Logged when a cryptographic algorithm operation (like signing or encrypting) fails in Windows cryptographic services. 
+ 	5058	Key file operation failed. Occurs when an operation on a cryptographic key file (e.g., reading, writing, deletion) does not complete successfully. 
+ 	5059	Key migration operation failed. Logged when Windows fails to export, import, or migrate a cryptographic key as part of certificate or encryption operations. 
+ 	5060	Verification operation on cryptographic key failed. Occurs when an attempt to verify a cryptographic key (for integrity or trust) does not complete successfully. 
+ 	5061	Cryptographic operation. Logged for each usage of a cryptographic key, showing details about operation type, algorithm, and provider. 
+ 	5062	A kernel-mode cryptographic self-test was performed. Occurs when Windows performs a self-test of its crypto modules at kernel level to ensure correct functioning. 
+ 	5063	A cryptographic provider operation was attempted. Logged when an operation is performed on a cryptographic provider or key store. 
+ 	5064	A cryptographic context operation was attempted. Occurs when an operation is performed on a cryptographic context (such as key generation or import). 
+ 	5065	A cryptographic context operation failed. Logged when an operation on a cryptographic context does not succeed. 
+ 	5066	A cryptographic context operation completed. Occurs when a cryptographic context operation (e.g., key import, signature) completes successfully or unsuccessfully. 
+ 	5067	A cryptographic parameter operation was attempted. Logged when a cryptographic operation on parameters (such as algorithm or key length) is initiated. 
+ 	5068	A cryptographic parameter operation failed. Occurs when a cryptographic parameter operation does not complete successfully. 
+ 	5069	A cryptographic parameter operation completed. Logged when a cryptographic parameter operation is finished, whether successful or not. 
+ 	5070	A cryptographic function operation was attempted. Occurs when a specific function (e.g., hash, sign, verify) in the crypto API is called. 
+ 	5071	A cryptographic provider operation was attempted. Logged when actions are taken on key storage providers or cryptographic providers. 
+ 	5120	A new volume has been added to the system. Logged when a new storage volume is detected and added (e.g., USB drive, new disk, etc.). 
+ 	5121	A device was successfully ejected. Logged when a removable device is safely ejected and removed from the system. 
+ 	5122	A device was successfully installed. Occurs when a new hardware device is successfully installed and available to the system. 
+ 	5123	A device failed to install. Logged when an attempt to install new device hardware on the system does not succeed. 
+ 	5124	A security setting was updated on OCSP Responder Service.
+This event is generated when a security setting is updated on OCSP Responder Service. It is logged only on OCSP responders/AD CS servers. 
+ 	5125	A device failed to start. Logged when an installed device cannot be started or initialized by the operating system. 
+ 	5126	A device was successfully stopped. Occurs when the system successfully stops a hardware device. 
+ 	5127	A device failed to stop. Logged when an attempt to stop a device does not succeed. 
+ 	5136	A directory service object was modified.
+This event is generated when an Active Directory object is modified. It is logged only on domain controllers. 
+ 	5137	A directory service object was created.
+This event is generated when an Active Directory object is created, provided proper SACLs are configured for the parent object. It is logged only on domain controllers. 
+ 	5138	A directory service object was undeleted.
+This event is generated when an Active Directory object is undeleted. It is logged only on domain controllers. 
+ 	5139	A directory service object was moved.
+This event is generated when an Active Directory object is moved from one OU to another. It is logged only on domain controllers. 
+ 	5140	A network share object was accessed.
+This event is generated when a network share object is accessed. It is logged on domain controllers and member computers. 
+ 	5141	A directory service object was deleted.
+This event is generated when an Active Directory object is deleted. It is logged on domain controllers and member computers. 
+ 	5142	A network share object was added.
+This event is generated whenever a network share object is added. It is logged on domain controllers and member computers. 
+ 	5143	A network share object was modified.
+This event is generated whenever a network share object is modified. It is logged on domain controllers and member computers. 
+ 	5144	A network share object was deleted. Occurs when a shared folder or resource is removed from the system. 
+ 	5145	A network share object was checked to see whether the client can be granted desired access. Logged when a system evaluates permissions to grant or deny access to a network share object. 
+ 	5146	The Windows Filtering Platform has permitted a connection. Logged when WFP allows a network connection (variant of 5156). 
+ 	5147	The Windows Filtering Platform has blocked a connection. Occurs when WFP blocks a network connection (variant of 5157). 
+ 	5148	A network connection was attempted with explicit credentials. Occurs when a network connection is made using a specified user account or explicit credentials. 
+ 	5149	The Windows Filtering Platform has blocked a packet. Logged when WFP blocks a network packet based on security or firewall rules. 
+ 	5150	The Windows Filtering Platform has permitted a packet. Occurs when WFP explicitly allows a network packet according to policy/rules. 
+ 	5151	A more restrictive Windows Filtering Platform filter has blocked a packet. Logged when a restrictive WFP rule blocks a network packet that another rule may have allowed. 
+ 	5152	The Windows Filtering Platform blocked a packet that does not match a valid security association. Occurs when WFP blocks a packet lacking a valid IPsec security association. 
+ 	5153	The Windows Filtering Platform blocked a packet that does not match an active filter. Logged when a network packet is blocked because it doesn’t match any active WFP filter. 
+ 	5154	The Windows Filtering Platform has permitted an application or service to listen on a port. Occurs when WFP allows an application or service to bind and listen on a network port. 
+ 	5155	The Windows Filtering Platform has blocked an application or service from listening on a port. Logged when WFP prevents an application from binding to a network port. 
+ 	5156	The Windows Filtering Platform has allowed a connection. Occurs when WFP explicitly allows an outbound or inbound network connection. 
+ 	5157	The Windows Filtering Platform has blocked a connection. Logged when WFP blocks an attempted network connection. 
+ 	5158	The Windows Filtering Platform has permitted a bind to a local port. Occurs when WFP allows a process to bind to a local port (but not necessarily listen for incoming traffic). 
+ 	5159	The Windows Filtering Platform has blocked a bind to a local port. Logged when WFP prevents a process from binding to a local port (application cannot listen on that port). 
+ 	5168	SPN check for SMB/SMB2 failed. Occurs when the Service Principal Name (SPN) validation fails for a server when processing SMB/SMB2 connections. 
+ 	5169	A trusted logon process has been successfully registered with the Local Security Authority. Logged when the operating system registers a new authentication or logon process. 
+ 	5170	The service principal name (SPN) check for SMB/SMB2 failed. Occurs when SPN validation fails during SMB/SMB2 protocol negotiation. 
+ 	5376	Credential Manager credentials were backed up. Occurs when credentials managed by Windows Credential Manager are backed up (e.g., for user profile migration). 
+ 	5377	Credential Manager credentials were restored from a backup. Logged when backed up Credential Manager credentials are restored. 
+ 	5378	The requested credentials delegation was disallowed by policy.
+This event is generated when the CredSSP delegation for a WinRM double-hop session is not set properly. It is logged on domain controllers and member computers. 
+ 	5440	A Windows Filtering Platform filter was changed. Logged when a network filtering rule or object is modified in WFP. 
+ 	5441	A Windows Filtering Platform filter was deleted. Occurs when a filtering rule or object is deleted from the Windows Filtering Platform. 
+ 	5442	A Windows Filtering Platform provider was changed. Logged when a filtering provider’s properties or configuration are changed. 
+ 	5443	A Windows Filtering Platform provider was deleted. Occurs when a filtering provider is deleted from WFP. 
+ 	5444	A Windows Filtering Platform layer was changed. Logged when a WFP layer (which processes network traffic at a certain point) is modified. 
+ 	5446	A Windows Filtering Platform sub-layer was changed. Occurs when a sub-layer within the WFP model is modified (sub-layers organize filters within layers). 
+ 	5447	A Windows Filtering Platform sub-layer was deleted. Logged when a sub-layer is deleted from WFP. 
+ 	5448	A Windows Filtering Platform callout was changed. Occurs when a callout driver (custom filter logic) in WFP is modified. 
+ 	5449	A Windows Filtering Platform filter has been changed. Logged when a filtering rule or object in WFP is modified. 
+ 	5450	A Windows Filtering Platform filter has been deleted. Occurs when a WFP filter or rule is deleted. 
+ 	5451	A WFP filter has been changed. Logged when a Windows Filtering Platform (WFP) filter is modified on the system. 
+ 	5452	A WFP filter has been deleted. Occurs when a Windows Filtering Platform (WFP) filter is removed from the system. 
+ 	5453	An IPsec Security Association was deleted by the Windows Filtering Platform. Indicates that IPsec SAs are deleted via WFP. 
+ 	5456	A Windows Filtering Platform cryptographic provider operation was attempted. Logged when a cryptographic provider operation is initiated by WFP. 
+ 	5457	A Windows Filtering Platform cryptographic provider operation failed. Occurs when a cryptographic provider operation initiated by WFP fails. 
+ 	5458	A Windows Filtering Platform cryptographic provider operation completed. Logged when a cryptographic operation by WFP completes, whether successful or not. 
+ 	5459	A Windows Filtering Platform cryptographic context operation was attempted. Occurs when an operation is attempted on a cryptographic context (key, cert, etc.) in WFP. 
+ 	5460	A Windows Filtering Platform cryptographic context operation failed. Logged when a cryptographic context operation fails in WFP. 
+ 	5461	A Windows Filtering Platform cryptographic context operation completed. Occurs when a cryptographic context operation finishes in WFP (success or failure). 
+ 	5462	A Windows Filtering Platform cryptographic parameter operation was attempted. Logged when WFP attempts an operation on cryptographic parameters. 
+ 	5463	A Windows Filtering Platform cryptographic parameter operation failed. Occurs when a cryptographic parameter operation initiated by WFP fails. 
+ 	5464	A Windows Filtering Platform (WFP) callout was deleted. Logged when a callout driver (custom filter logic) in the Windows Filtering Platform is deleted. 
+ 	5465	A Windows Filtering Platform provider context was changed. Occurs when the configuration or attributes of a WFP provider context are modified. 
+ 	5466	A Windows Filtering Platform provider context was deleted. Logged when a provider context is removed from WFP, possibly affecting filtering logic. 
+ 	5467	A Windows Filtering Platform callout was added. Occurs when new callout logic is registered with WFP, enabling custom filtering operations. 
+ 	5468	A Windows Filtering Platform provider context was added. Logged when a new provider context (which maintains state/info for a provider) is registered in WFP. 
+ 	5471	IPsec Security Association established. Logged when a new IPsec Security Association (SA) is successfully created for secure communications. 
+ 	5472	IPsec Security Association ended. Occurs when an existing IPsec SA is terminated, either due to expiration, policy change, or manual teardown. 
+ 	5473	IPsec Security Association rekeyed. Logged when an active IPsec SA undergoes rekeying to update encryption keys for security. 
+ 	5474	IPsec Security Association deleted. Occurs when an IPsec SA is deleted from the system, ceasing its secure communication tunnel. 
+ 	5477	IPsec DoS Protection detected an attack and took corrective action. Logged when IPsec detects a potential denial-of-service attack and applies protective measures such as blocking or rate-limiting traffic. 
+ 	5478	IPsec Services has started successfully. Logged when the IPsec Services start operating on the machine. 
+ 	5479	IPsec Services has shut down successfully. Occurs when the IPsec Services are gracefully stopped or shut down. 
+ 	5480	IPsec Services failed to initialize RPC server. Logged when IPsec fails to start its RPC server, which may affect policy application. 
+ 	5483	IPsec Services failed to initialize IKE (Internet Key Exchange). Occurs when IPsec cannot start the IKE service, impacting VPN or secure communications. 
+ 	5484	IPsec Services failed to get the complete list of network interfaces on the machine. Logged when IPsec is unable to retrieve all interface data, potentially limiting its functionality. 
+ 	5485	IPsec Services failed to process some IPsec filters on a plugged-in network interface. Occurs when IPsec cannot apply certain security filters to a network interface. 
+ 	5600	A process failed to logon due to invalid credentials. Logged when a logon attempt via a process fails because the credentials provided are invalid. 
+ 	5632	A request was made to authenticate to a wireless network.
+This event is generated when a network adapter connects to a new wireless network and an 802.1x authentication attempt is made for that network. It is logged on domain controllers and member computers. 
+ 	5633	A request was made to authenticate to a wired network.
+This event is generated when a network adapter connects to a new wired network and an 802.1x authentication attempt is made for that network. It is logged on domain controllers and member computers. 
+ 	5712	A Remote Procedure Call (RPC) was attempted. Occurs when a system attempts or initiates an RPC. 
+ 	5888	An object in the COM+ Catalog was modified. Logged when an object in the COM+ (Component Services) catalog is changed. 
+ 	5889	An object was deleted from the COM+ Catalog. Occurs when an object is removed from the COM+ catalog. 
+ 	5890	Certificate Services backup started. Logged when the Certificate Authority (CA) begins a backup operation. 
+ 	6005	The Event Log service was started.
+This event is generated when the Event Log service is started. It is logged on domain controllers, member servers, and workstations. 
+ 	6006	The Event Log service was stopped.
+This event is generated when the Event Log service is stopped. It is logged on domain controllers, member servers, and workstations. 
+ 	6008	Unexpected system shutdown.
+This event is generated when a system shuts down unexpectedly. It is logged on domain controllers, member servers, and workstations. 
+ 	6144	Security policy in the group policy objects has been applied successfully. Logged when Windows applies system or security-related Group Policy from Active Directory/domain. 
+ 	6145	One or more errors occurred while processing security policy in group policy objects. Occurs when one or more Group Policy security settings fail to apply during processing. 
+ 	6272	Network Policy Server (NPS) granted access to a user.
+This event is generated every time NPS grants access to a user. It is logged only on NPS. 
+ 	6273	Network Policy Server denied access to a user. Occurs when an NPS server denies network access to a user or computer during authentication. 
+ 	6274	NPS discarded the request for a user.
+This event is generated every time NPS discards a user’s request because the structure of the request does not comply with the RADIUS protocol. It is logged only on NPS. 
+ 	6275	NPS discarded the accounting request for a user.
+This event is generated every time NPS discards an accounting request from a RADIUS client because the structure of the request does not comply with the RADIUS protocol. It is logged only on NPS. 
+ 	6276	NPS quarantined a user.
+This event is generated every time NPS quarantines a user for multiple authentication failures. It is logged only on NPS. 
+ 	6277	NPS granted access to a user, but put the user on probation because the host did not meet the defined health policy.
+This event is generated every time NPS puts a user on probation after granting access because the host could not meet the defined health policy. It is logged only on NPS. 
+ 	6278	NPS granted access to a user because the host met the defined health policy.
+This event is generated every time NPS grants access to a user since the host has met the defined health policy. It is logged only on NPS. 
+ 	6279	NPS locked the user account due to repeat failed authentication attempts.
+This event is generated every time NPS locks a user account due to repeat failed authentication attempts. It is logged only on NPS. 
+ 	6280	NPS unlocked the user account.
+This event is generated every time NPS unlocks a user account after the account lockout. It is logged only on NPS. 
+ 	6281	Code integrity determined that the page hashes of an image file are not valid. Logged when a file (driver, system binary, etc.) fails code integrity checks due to invalid or tampered page hashes. 
+ 	6400	BranchCache: Received an incorrectly formatted response while discovering availability of content. Logged when BranchCache receives a malformed response during discovery. 
+ 	6401	BranchCache: Received invalid data from a peer. Occurs when BranchCache receives data that fails validation or tampering checks from another system. 
+ 	6402	BranchCache: Received a binding request with incorrect authentication. Logged when a BranchCache binding request is rejected due to authentication errors. 
+ 	6403	BranchCache: Database recovery/consistency check failed. Occurs when BranchCache cannot recover or verify the integrity of its database. 
+ 	6404	BranchCache: Hosted cache could not be authenticated using the provisioned SSL certificate. Logged when BranchCache hosting fails SSL certificate authentication, risking secure cache. 
+ 	6405	BranchCache: Hosted cache cannot obtain the current list of trusted clients from Active Directory. Occurs when BranchCache is unable to retrieve allowed client information from AD. 
+ 	6406	BranchCache: Hosted cache disconnected from active directory. Logged when the BranchCache server loses connection to Active Directory, impacting access control. 
+ 	6407	BranchCache: Hosted cache connected to active directory. Occurs when the BranchCache server successfully establishes connection to Active Directory. 
+ 	6408	BranchCache: Hosted cache could not authenticate the client. Logged when BranchCache fails to authenticate a client attempting to connect, due to invalid credentials or policy violation. 
+ 	6409	BranchCache: Hosted cache record could not be updated. Occurs when BranchCache cannot update its hosted cache records, possibly due to corruption or configuration error. 
+ 	6410	Code integrity determined that a file does not meet the security requirements. Logged when Windows detects a file that fails code integrity policy checks, such as lacking a valid signature. 
+ 	6416	A new external device was recognized by the system.
+This event is generated when a new external device, such as a USB, is connected to the system. It is logged on servers and workstations. 
+ 	6417	A change was made to audit Policy. Occurs when system audit policy is modified (e.g., what is audited or not). 
+ 	6418	A change was made to system security auditing policy. Logged when the security auditing policy (i.e., what events are audited) is changed. 
+ 	6419	A request was made to disable a device. Occurs when there is an attempt to disable a device via Device Manager or policy. 
+ 	6420	Device installation blocked by device installation restriction policy. Logged when policy prevents installation of a device due to group or system restriction. 
+ 	6421	Device installation allowed by device installation restriction policy. Occurs when device installation is permitted in alignment with policy rules. 
+ 	6422	Device removal blocked by device removal restriction policy. Logged when a removable device cannot be uninstalled or ejected due to security policy. 
+ 	6423	Device removal allowed by device removal restriction policy. Occurs when policy allows successful removal or ejection of a device. 
+ 	6424	A device installation request was ignored. Logged when Windows ignores a request to install a new device, possibly due to incorrect context or other conditions. 
+ 	7045	A new service was installed in the system.
+A new service was installed in the system. 
+ 	8191	Log name overflow occurred. Logged when the Windows event log reaches its maximum limit for log names or entries. 
+ 	9999	An object was renamed.
+This event is generated when an Active Directory object is renamed. It is logged on domain controllers and member computers. 
